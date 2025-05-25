@@ -1,0 +1,206 @@
+[gd_scene load_steps=19 format=3 uid="uid://df5ipri87m5d0"]
+
+[ext_resource type="Script" uid="uid://cpa0gfj43n3wd" path="res://personajes/nivel_1.gd" id="1_4gal2"]
+[ext_resource type="PackedScene" uid="uid://d2xuqugfp7arf" path="res://suelos/Tierra.tscn" id="1_indp2"]
+[ext_resource type="PackedScene" uid="uid://dig5mr7ncv783" path="res://suelos/plataforma.tscn" id="2_53rui"]
+[ext_resource type="PackedScene" uid="uid://ciic2susqxgvu" path="res://Arrojadizos/sierra.tscn" id="3_nkfwk"]
+[ext_resource type="PackedScene" uid="uid://5qmj7u7kjlrx" path="res://personajes/personaje.tscn" id="4_n4hqe"]
+[ext_resource type="Script" uid="uid://bwwptwl2no18d" path="res://personajes/Personaje.gd" id="5_f68y0"]
+[ext_resource type="Texture2D" uid="uid://cy5tctmow5f8d" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile023.png" id="5_ms6r2"]
+[ext_resource type="Texture2D" uid="uid://b8gy0a52pxwwj" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile038.png" id="6_fh5nd"]
+[ext_resource type="PackedScene" uid="uid://nn4gc4qfjee5" path="res://slime.tscn" id="7_2te1c"]
+[ext_resource type="Texture2D" uid="uid://bjcg1wgdmkdqm" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile039.png" id="7_f68y0"]
+[ext_resource type="Texture2D" uid="uid://5gg71d1plibi" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile045.png" id="8_2te1c"]
+[ext_resource type="Texture2D" uid="uid://cw0fv8iu56x2x" path="res://kenney_simplified-platformer-pack/PNG/Items/platformPack_item007.png" id="9_4gal2"]
+[ext_resource type="Texture2D" uid="uid://cunaivevw8yw3" path="res://kenney_simplified-platformer-pack/PNG/Items/platformPack_item018.png" id="10_h846f"]
+[ext_resource type="Texture2D" uid="uid://jgaqhpgwaiog" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile024.png" id="11_fh5nd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2te1c"]
+size = Vector2(151.102, 83.9444)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gal2"]
+size = Vector2(151.942, 80.0129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h846f"]
+size = Vector2(151, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f68y0"]
+size = Vector2(150.74, 82.647)
+
+[node name="Nivel1" type="Node2D"]
+script = ExtResource("1_4gal2")
+
+[node name="Suelos" type="Node2D" parent="."]
+
+[node name="Tierra" parent="Suelos" instance=ExtResource("1_indp2")]
+position = Vector2(626, 588)
+scale = Vector2(43.0695, 2.19192)
+
+[node name="PlataformaPiedra" parent="Suelos" instance=ExtResource("2_53rui")]
+position = Vector2(-179, -874)
+rotation = 0.312101
+scale = Vector2(11.8037, 0.925735)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Suelos/PlataformaPiedra"]
+position = Vector2(-0.22118, -31.972)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_2te1c")
+one_way_collision = true
+
+[node name="PlataformaPiedra2" parent="Suelos" instance=ExtResource("2_53rui")]
+position = Vector2(1227, -1260)
+rotation = -0.135129
+scale = Vector2(12.96, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Suelos/PlataformaPiedra2"]
+position = Vector2(-0.463112, -30.0831)
+shape = SubResource("RectangleShape2D_4gal2")
+one_way_collision = true
+
+[node name="PlataformaPiedra3" parent="Suelos" instance=ExtResource("2_53rui")]
+position = Vector2(982, -385)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Suelos/PlataformaPiedra3"]
+position = Vector2(-0.5, -32)
+shape = SubResource("RectangleShape2D_h846f")
+one_way_collision = true
+
+[node name="PlataformaPiedra4" parent="Suelos" instance=ExtResource("2_53rui")]
+position = Vector2(1508, -55)
+rotation = -0.459952
+scale = Vector2(5.7069, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Suelos/PlataformaPiedra4"]
+position = Vector2(-0.0635071, -31.3234)
+shape = SubResource("RectangleShape2D_f68y0")
+one_way_collision = true
+
+[node name="objetos" type="Node2D" parent="."]
+
+[node name="Sierra" parent="objetos" instance=ExtResource("3_nkfwk")]
+position = Vector2(853, -1443)
+
+[node name="Sierra2" parent="objetos" instance=ExtResource("3_nkfwk")]
+position = Vector2(-425, -1186)
+
+[node name="Sierra3" parent="objetos" instance=ExtResource("3_nkfwk")]
+position = Vector2(615, -801)
+
+[node name="Sierra4" parent="objetos" instance=ExtResource("3_nkfwk")]
+position = Vector2(1881, -1535)
+
+[node name="Sierra5" parent="objetos" instance=ExtResource("3_nkfwk")]
+position = Vector2(1520, -354)
+
+[node name="Personaje" parent="." instance=ExtResource("4_n4hqe")]
+position = Vector2(442, 344)
+floor_max_angle = 1.32645
+floor_snap_length = 1.3
+script = ExtResource("5_f68y0")
+
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+position = Vector2(58, 0)
+
+[node name="Fondo" type="Node2D" parent="."]
+
+[node name="PlatformPackTile023" type="Sprite2D" parent="Fondo"]
+position = Vector2(73, 394)
+texture = ExtResource("5_ms6r2")
+
+[node name="Slime" parent="Fondo/PlatformPackTile023" instance=ExtResource("7_2te1c")]
+position = Vector2(1244, -9)
+metadata/enemigos = true
+
+[node name="Slime" parent="Fondo/PlatformPackTile023/Slime" instance=ExtResource("7_2te1c")]
+position = Vector2(-628, -137)
+
+[node name="Slime" parent="Fondo/PlatformPackTile023/Slime/Slime" instance=ExtResource("7_2te1c")]
+position = Vector2(487, -285)
+
+[node name="Slime" parent="Fondo/PlatformPackTile023/Slime/Slime/Slime" instance=ExtResource("7_2te1c")]
+position = Vector2(-266, 47)
+
+[node name="PlatformPackTile038" type="Sprite2D" parent="Fondo"]
+position = Vector2(283, 395)
+texture = ExtResource("6_fh5nd")
+
+[node name="PlatformPackTile039" type="Sprite2D" parent="Fondo"]
+position = Vector2(223, 427)
+texture = ExtResource("7_f68y0")
+
+[node name="PlatformPackTile040" type="Sprite2D" parent="Fondo"]
+position = Vector2(221, 394)
+texture = ExtResource("7_f68y0")
+
+[node name="PlatformPackTile045" type="Sprite2D" parent="Fondo"]
+position = Vector2(1201, 394)
+texture = ExtResource("8_2te1c")
+
+[node name="PlatformPackTile046" type="Sprite2D" parent="Fondo"]
+position = Vector2(163, 394)
+texture = ExtResource("8_2te1c")
+
+[node name="PlatformPackTile047" type="Sprite2D" parent="Fondo"]
+position = Vector2(-41, 395)
+texture = ExtResource("8_2te1c")
+
+[node name="PlatformPackItem007" type="Sprite2D" parent="Fondo"]
+position = Vector2(74, 398)
+texture = ExtResource("9_4gal2")
+
+[node name="PlatformPackItem018" type="Sprite2D" parent="Fondo"]
+position = Vector2(75, 396)
+texture = ExtResource("10_h846f")
+
+[node name="PlatformPackTile024" type="Sprite2D" parent="Fondo"]
+position = Vector2(-942, -1297)
+texture = ExtResource("11_fh5nd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "¡Has muerto! :("
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reintentar"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/HBoxContainer/Button" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/HBoxContainer/Button2" to="." method="_on_salir_pressed"]

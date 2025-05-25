@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi7vgtbbyik2p"]
+
+[ext_resource type="Script" uid="uid://co6d8rhpmkmtm" path="res://game_over_hud.gd" id="1_px4ru"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_px4ru")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -252.0
+offset_right = 220.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 501.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "¡Has muerto! :("
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reintentar"
+
+[node name="Button2" type="Button" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Salir"

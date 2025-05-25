@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciic2susqxgvu"]
+
+[ext_resource type="Texture2D" uid="uid://c7n7gs4yqs7y6" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile044.png" id="1_ogm40"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2cl3"]
+radius = 29.0172
+
+[node name="Sierra" type="RigidBody2D"]
+
+[node name="PlatformPackTile044" type="Sprite2D" parent="."]
+texture = ExtResource("1_ogm40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i2cl3")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2xuqugfp7arf"]
+
+[ext_resource type="Texture2D" uid="uid://bs7tvg1lbt3mg" path="res://kenney_simplified-platformer-pack/PNG/Tiles/platformPack_tile001.png" id="1_dq1qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3clh"]
+size = Vector2(153, 149)
+
+[node name="Tierra" type="StaticBody2D"]
+
+[node name="Bloque de tierra" type="Sprite2D" parent="."]
+scale = Vector2(2.35938, 2.32813)
+texture = ExtResource("1_dq1qf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_s3clh")
